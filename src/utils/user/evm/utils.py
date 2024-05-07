@@ -82,7 +82,7 @@ class Utils:
 
     async def setup_decimals(self, from_token: str, from_token_address: str, web3: AsyncWeb3
                              ) -> Union[int, Callable[[str, AsyncWeb3], Awaitable[int]]]:
-        if from_token.lower() == 'eth' or from_token.lower() == 'weth':
+        if from_token.lower() == 'eth' or from_token.lower() == 'weth' or from_token_address == '...':
             return 18
         else:
             return await self.get_decimals(from_token_address, web3)
