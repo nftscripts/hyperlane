@@ -1,0 +1,280 @@
+[
+  {
+    "type": "function",
+    "selector": "0xde523cf3",
+    "sig": "interchainSecurityModule()",
+    "name": "interchainSecurityModule",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0xe9198bf9",
+    "sig": "enrollRemoteRouters(uint32[],bytes32[])",
+    "name": "enrollRemoteRouters",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32[]"
+      },
+      {
+        "type": "bytes32[]"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xf1bd6f0a",
+    "sig": "setInterchainGasPaymaster(address)",
+    "name": "setInterchainGasPaymaster",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xf2ed8c53",
+    "name": "quoteGasPayment",
+    "constant": true,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xf2fde38b",
+    "sig": "transferOwnership(address)",
+    "name": "transferOwnership",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xf3c61d6b",
+    "sig": "setMailbox(address)",
+    "name": "setMailbox",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x8da5cb5b",
+    "sig": "owner()",
+    "name": "owner",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x996c6cc3",
+    "sig": "wrappedToken()",
+    "name": "wrappedToken",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0xb1bd6436",
+    "sig": "setDestinationGas((uint32,uint256)[])",
+    "name": "setDestinationGas",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "tuple[]",
+        "components": [
+          {
+            "type": "uint32"
+          },
+          {
+            "type": "uint256"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xb49c53a7",
+    "sig": "enrollRemoteRouter(uint32,bytes32)",
+    "name": "enrollRemoteRouter",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      },
+      {
+        "type": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xd5438eae",
+    "sig": "mailbox()",
+    "name": "mailbox",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x56d5d475",
+    "sig": "handle(uint32,address,bytes)",
+    "name": "handle",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      },
+      {
+        "type": "address"
+      },
+      {
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x70a08231",
+    "sig": "balanceOf(address)",
+    "name": "balanceOf",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x715018a6",
+    "sig": "renounceOwnership()",
+    "name": "renounceOwnership",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x775313a1",
+    "sig": "destinationGas(uint32)",
+    "name": "destinationGas",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x81b4e8b4",
+    "sig": "transferRemote(uint32,bytes32,uint256)",
+    "name": "transferRemote",
+    "constant": false,
+    "payable": true,
+    "inputs": [
+      {
+        "type": "uint32"
+      },
+      {
+        "type": "bytes32"
+      },
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x0e72cc06",
+    "sig": "setInterchainSecurityModule(address)",
+    "name": "setInterchainSecurityModule",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x2ead72f6",
+    "sig": "routers(uint32)",
+    "name": "routers",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x39bb4ad9",
+    "sig": "interchainGasPaymaster()",
+    "name": "interchainGasPaymaster",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x440df4f4",
+    "sig": "domains()",
+    "name": "domains",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x485cc955",
+    "sig": "initialize(address,address)",
+    "name": "initialize",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      },
+      {
+        "type": "address"
+      }
+    ]
+  }
+]

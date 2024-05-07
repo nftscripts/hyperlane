@@ -1,0 +1,71 @@
+[
+  {
+    "type": "function",
+    "name": "quoteBridge",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32",
+        "name": "_destination"
+      },
+      {
+        "type": "uint256",
+        "name": "amount"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "fee"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "bridgeETH",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [
+      {
+        "type": "uint32",
+        "name": "_destination"
+      },
+      {
+        "type": "uint256",
+        "name": "amount"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bytes32",
+        "name": "messageId"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "bridgeWETH",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [
+      {
+        "type": "uint32",
+        "name": "_destination"
+      },
+      {
+        "type": "uint256",
+        "name": "amount"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bytes32",
+        "name": "messageId"
+      }
+    ]
+  }
+]
