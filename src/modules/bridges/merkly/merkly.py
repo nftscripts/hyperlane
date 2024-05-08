@@ -233,7 +233,7 @@ class Merkly(EVMAccount):
         if balance == 0:
             self.logger.warning(f'Your ETH balance is 0 | [{self.wallet_address}]')
 
-        to_chain_account = EVMAccount(self.private_key, chain_mapping[self.to_chain.lower()].rpc)
+        to_chain_account = EVMAccount(self.private_key, chain_mapping[self.to_chain.upper()].rpc)
         if self.to_chain.upper() == 'POLYGON' or self.to_chain.upper() == 'BSC':
             balance_before_bridge = await to_chain_account.get_wallet_balance(
                 'xxx',
