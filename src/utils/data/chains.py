@@ -49,6 +49,11 @@ LINEA = Chain(
     scan='https://lineascan.build'
 )
 
+POLYGON = Chain(
+    rpc='https://polygon-pokt.nodies.app',
+    scan='https://polygonscan.com/'
+)
+
 chain_mapping = {
     'BSC': BSC,
     'NAUTILUS': NAUTILUS,
@@ -58,5 +63,6 @@ chain_mapping = {
     'ERA': ERA,
     'SCROLL': SCROLL,
     'OP': OP,
-    'LINEA': LINEA
+    'LINEA': LINEA,
+    'POLYGON': POLYGON
 }

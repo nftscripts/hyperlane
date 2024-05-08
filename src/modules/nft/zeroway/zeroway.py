@@ -39,8 +39,8 @@ class ZeroWay(ABCMintBridge):
 
         super().__init__(
             private_key=private_key,
-            from_chain=from_chain,
-            to_chain=to_chain,
+            from_chain=self.from_chain,
+            to_chain=self.to_chain,
             contract_address=contract_address,
             name='zeroway'
         )
@@ -65,8 +65,13 @@ class ZeroWay(ABCMintBridge):
     async def get_nft_id(self, tx_hash: HexStr) -> int:
         receipt = await self.web3.eth.get_transaction_receipt(tx_hash)
         logs = receipt.get('logs')
-        mint_id_hex = (logs[0]['topics'][3]).hex()
-        mint_id = int(mint_id_hex, 16)
+        if self.from_chain.upper() == 'POLYGON':
+            mint_id_hex = (logs[1]['topics'][3]).hex()
+            mint_id = int(mint_id_hex, 16)
+        else:
+            mint_id_hex = (logs[0]['topics'][3]).hex()
+            mint_id = int(mint_id_hex, 16)
+
         return mint_id
 
     async def create_bridge_transaction(self, contract: Contract, nft_id: int) -> TxParams:

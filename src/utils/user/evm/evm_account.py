@@ -28,7 +28,7 @@ class EVMAccount(Utils):
         super().__init__()
 
     async def get_wallet_balance(self, token: str = 'ETH', stable_address: str = None) -> float:
-        if token.lower() != 'eth' and stable_address != '...':
+        if token.lower() != 'eth' and stable_address != '...' and token.lower() != 'bnb':
             contract = self.web3.eth.contract(address=self.web3.to_checksum_address(stable_address),
                                               abi=self.load_abi('erc20'))
             balance = await contract.functions.balanceOf(self.wallet_address).call()

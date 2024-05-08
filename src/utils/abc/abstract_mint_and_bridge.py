@@ -1,5 +1,4 @@
 from abc import abstractmethod, ABC
-import random
 
 from eth_typing import HexStr
 from web3.contract import Contract
@@ -15,30 +14,13 @@ class ABCMintBridge(ABC, EVMAccount):
     def __init__(
             self,
             private_key: str,
-            from_chain: str | list[str],
-            to_chain: str | list[str],
+            from_chain: str,
+            to_chain: str,
             contract_address: str,
             name: str
     ):
-        while True:
-            if isinstance(from_chain, list):
-                self.from_chain = random.choice(from_chain)
-            elif isinstance(from_chain, str):
-                self.from_chain = from_chain
-            else:
-                raise ValueError(f'from_chain must be str or list[str]. Got {type(from_chain)}')
-
-            if isinstance(to_chain, list):
-                self.to_chain = random.choice(to_chain)
-            elif isinstance(to_chain, str):
-                self.to_chain = to_chain
-            else:
-                raise ValueError(f'to_chain must be str or list[str]. Got {type(to_chain)}')
-
-            if self.from_chain == self.to_chain:
-                continue
-            break
-
+        self.from_chain = from_chain
+        self.to_chain = to_chain
         rpc = chain_mapping[self.from_chain.upper()].rpc
         self.scan = chain_mapping[self.from_chain.upper()].scan
         super().__init__(private_key, rpc)
