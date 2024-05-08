@@ -1,4 +1,5 @@
 import random
+from asyncio import sleep
 
 from eth_typing import HexStr
 from web3.contract import Contract
@@ -60,7 +61,14 @@ class GetMint(ABCMintBridge):
         return tx
 
     async def get_nft_id(self, tx_hash: HexStr) -> int:
-        receipt = await self.web3.eth.get_transaction_receipt(tx_hash)
+        while True:
+            try:
+                receipt = await self.web3.eth.get_transaction_receipt(tx_hash)
+                break
+            except Exception as ex:
+                self.logger.error(ex)
+                await sleep(1)
+
         logs = receipt.get('logs')
         if self.from_chain.upper() == 'POLYGON':
             mint_id_hex = (logs[1]['topics'][3]).hex()
@@ -84,6 +92,6 @@ class GetMint(ABCMintBridge):
             "from": self.wallet_address,
             "nonce": await self.web3.eth.get_transaction_count(self.wallet_address),
             'gasPrice': await self.web3.eth.gas_price,
-            "value": int(fee * 1.2)
+            "value": int(fee * 1.4)
         })
         return tx
