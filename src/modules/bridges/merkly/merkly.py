@@ -108,6 +108,7 @@ class Merkly(EVMAccount):
             nft_id = await self.get_nft_id(tx_hash)
             await self.bridge_nft(contract, nft_id)
 
+    @retry()
     async def mint_nft(self, contract: Contract) -> Optional[HexStr]:
         fee = await contract.functions.fee().call()
         tx = await contract.functions.mint(1).build_transaction({
@@ -143,6 +144,7 @@ class Merkly(EVMAccount):
         mint_id = int(mint_id_hex, 16)
         return mint_id
 
+    @retry()
     async def bridge_nft(self, contract: Contract, nft_id: int) -> None:
         fee = await contract.functions.quoteBridge(self.domains_mapping[self.to_chain.lower()]).call()
 
@@ -223,6 +225,7 @@ class Merkly(EVMAccount):
         if confirmed:
             self.logger.success(f'Successfully bridged {self.from_chain} => {self.to_chain}')
 
+    @retry()
     async def bridge_eth(self) -> None:
         contract = self.load_contract(self.contract_address, self.web3, abi_names['merkly']['eth'])
         if self.from_chain.upper() == 'POLYGON' or self.from_chain.upper() == 'BSC':
