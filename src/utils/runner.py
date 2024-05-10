@@ -5,6 +5,7 @@ from loguru import logger
 from src.modules.bridges.nautilus.nautilus_bridge import NautilusBridge
 from src.modules.bridges.merkly.merkly import Merkly
 from src.modules.nft.getmint.getmint import GetMint
+from src.modules.nft.nogem.nogem import Nogem
 from src.modules.nft.zeroway.zeroway import ZeroWay
 from src.modules.nft.womex.womex import Womex
 from config import *
@@ -119,3 +120,43 @@ async def process_zeroway(private_key: str) -> None:
     )
     logger.debug(zeroway)
     await zeroway.run()
+
+
+async def process_nogem(private_key: str) -> None:
+    action = NogemConfig.action
+    if isinstance(action, list):
+        action = random.choice(action)
+    elif isinstance(action, str):
+        action = action
+    else:
+        raise ValueError(f'action must be str or list[str]. Got {type(action)}')
+
+    if action.upper() == 'FT':
+        mint = NogemConfig.mint
+        from_chain = NogemConfig.from_chain
+        to_chain = NogemConfig.to_chain
+        bridge_all_tokens = NogemConfig.bridge_all_tokens
+        percent_to_bridge = NogemConfig.percent_to_bridge
+    elif action.upper() == 'NFT':
+        mint = None
+        from_chain = NogemConfig.from_chain_nft
+        to_chain = NogemConfig.to_chain_nft
+        bridge_all_tokens = None
+        percent_to_bridge = None
+    else:
+        raise ValueError(f'Unknown action {action}')
+
+    nogem = Nogem(
+        private_key=private_key,
+        action=action,
+        mint=mint,
+        from_chain=from_chain,
+        to_chain=to_chain,
+        bridge_all_tokens=bridge_all_tokens,
+        percent_to_bridge=percent_to_bridge
+    )
+    logger.debug(nogem)
+    if action.upper() == 'FT':
+        await nogem.run_ft()
+    elif action.upper() == 'NFT':
+        await nogem.run_nft()

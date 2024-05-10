@@ -5,5 +5,6 @@ module_handlers = {
     'merkly': process_merkly,
     'get_mint': process_get_mint,
     'womex': process_womex,
-    'zeroway': process_zeroway
+    'zeroway': process_zeroway,
+    'nogem': process_nogem
 }

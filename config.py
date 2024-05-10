@@ -17,6 +17,7 @@ merkly = False
 get_mint = True
 womex = False
 zeroway = False
+nogem = True
 
 
 # --- Bridges --- #
@@ -64,5 +65,20 @@ class WomexConfig:
 
 
 class ZeroWayConfig:
+    from_chain = ['OP', 'SCROLL']
+    to_chain = ['SCROLL', 'BASE', 'CELO', 'MOONBEAM', 'POLYGON', 'GNOSIS']
+
+
+class NogemConfig:
+    action = ['FT']  # FT / NFT
+
+    # --- FT --- #
+    mint = True
     from_chain = ['BASE']
     to_chain = ['POLYGON']
+    bridge_all_tokens = True
+    percent_to_bridge = [0.05, 0.1]
+
+    # --- NFT --- #
+    from_chain_nft = ['BASE']
+    to_chain_nft = ['POLYGON']

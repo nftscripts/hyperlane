@@ -1,0 +1,161 @@
+[
+  {
+    "type": "function",
+    "selector": "0x1249c58b",
+    "sig": "mint()",
+    "name": "mint",
+    "constant": false,
+    "payable": true,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x13966db5",
+    "sig": "mintFee()",
+    "name": "mintFee",
+    "constant": false,
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x440df4f4",
+    "sig": "domains()",
+    "name": "domains",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x4f6ccce7",
+    "sig": "tokenByIndex(uint256)",
+    "name": "tokenByIndex",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+
+  {
+    "type": "function",
+    "selector": "0x56d5d475",
+    "sig": "handle(uint32,bytes32,bytes)",
+    "name": "handle",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      },
+      {
+        "type": "bytes32"
+      },
+      {
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x6352211e",
+    "sig": "ownerOf(uint256)",
+    "name": "ownerOf",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x6a627842",
+    "sig": "mint(address)",
+    "name": "mint",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x775313a1",
+    "sig": "destinationGas(uint32)",
+    "name": "destinationGas",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x7f5a7c7b",
+    "sig": "hook()",
+    "name": "hook",
+    "constant": false,
+    "payable": false,
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "selector": "0x81b4e8b4",
+    "sig": "transferRemote(uint32,bytes32,uint256)",
+    "name": "transferRemote",
+    "constant": false,
+    "payable": true,
+    "inputs": [
+      {
+        "type": "uint32"
+      },
+      {
+        "type": "bytes32"
+      },
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0x82b12dd7",
+    "sig": "bridgeFee()",
+    "name": "bridgeFee",
+    "constant": false,
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+       {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "selector": "0xf2ed8c53",
+    "sig": "quoteGasPayment(uint32)",
+    "name": "quoteGasPayment",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      {
+        "type": "uint32"
+      }
+    ]
+  }
+]

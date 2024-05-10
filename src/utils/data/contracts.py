@@ -91,6 +91,30 @@ contracts = {
         'polygon zkevm': '0x6052C5C075212F013C856BFF015872914eD3492a',
         'moonbeam': '0x6052C5C075212F013C856BFF015872914eD3492a',
         'gnosis': '0x6052C5C075212F013C856BFF015872914eD3492a'
+    },
+    'nogem': {
+        "NFT": {
+            "arb": "0x6d65c9156B7EF63159919Ed130277fb39a4F56b4",
+            "avalanche": "0xC9b73b0214e644ca112ffCeAF7fDc150c6e5A310",
+            "base": "0xE80C7830949FF7907885cE4397F41Fe36549a4Cb",
+            "bsc": "0x4394a538E1325F5214DdC113293f87f4E8897b09",
+            "celo": "0xD5B53bA6D596C4C47060Aca2963C0EDD2Df8e6e4",
+            "gnosis": "0x51332f35F3D29c8d137fA5C8E0C2ce4Afbfca498",
+            "manta": "0x100b19e5f7ebd0eb65cb09A5533217D21a1535b6",
+            "moonbeam": "0xfa0aCcf6386942e7aC8Ab00Fc7C91f8b641AfA79",
+            "op": "0x9e95502466fd3ab0a9C503c344C9d6a2A77F175B",
+            "polygon": "0x4d2bEEABff0DdC5007Cd59B499654d8573Aa306B",
+            "scroll": "0x3bDc0495F96123750B2FF52c7a57Ce25578C4439",
+            "viction": "0x1ad95458F439dA9656FfC0e12310c56AA159abe7"
+        },
+        "FT": {
+            "base": "0xebbc9c1b30b32677df944ba48a8647fcbc165899",
+            "arb": "0x0930173DE33d31DEf36A84cdf79184fFf214faAd",
+            "avalanche": "0x9CE7DD0932b79ec13A14cDFCdB5d8D4cffdD4a75",
+            "bsc": "0x6edb0bd1283786941780272B7Ae038b92D646C87",
+            "op": "0x8CFc792406BF8af5c116339315f25DfdbA2412B4",
+            "polygon": "0xd9b90db3A90E7d1918272747f26cBAC970d13B85"
+        }
     }
 }
 
@@ -103,5 +127,9 @@ abi_names = {
     },
     'get_mint': 'get_mint_abi',
     'womex': 'womex_abi',
-    'zeroway': 'zeroway_abi'
+    'zeroway': 'zeroway_abi',
+    'nogem': {
+        'nft': 'nogem_nft_abi',
+        'ft': 'nogem_ft_abi'
+    }
 }
