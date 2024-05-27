@@ -24,6 +24,7 @@ nogem = True
 
 class NautilusBridgeConfig:
     from_chain = 'Nautilus'  # BSC / Nautilus
+    to_chain = 'SOLANA'  # BSC / Nautilus / Solana
     token = 'ZBC'
     amount = [50, 100]
     use_percentage = True

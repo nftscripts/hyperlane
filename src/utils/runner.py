@@ -13,10 +13,26 @@ from config import *
 
 async def process_nautilus_bridge(private_key: str) -> None:
     from_chain = NautilusBridgeConfig.from_chain
+    to_chain = NautilusBridgeConfig.to_chain
     token = NautilusBridgeConfig.token
     amount = NautilusBridgeConfig.amount
     use_percentage = NautilusBridgeConfig.use_percentage
     bridge_percentage = NautilusBridgeConfig.bridge_percentage
+
+    solana_address = None
+    if to_chain.upper() == 'SOLANA':
+        with open('solana_addresses.txt', 'r') as file:
+            solana_addresses = [line.strip() for line in file]
+
+        with open('wallets.txt', 'r') as file:
+            private_keys = [line.strip() for line in file]
+
+        if len(private_keys) != len(solana_addresses):
+            logger.error(f'Number of EVM wallets does not match the number of SOLANA wallets!')
+            return
+
+        private_key_index = private_keys.index(private_key)
+        solana_address = solana_addresses[private_key_index]
 
     nautilus_bridge = NautilusBridge(
         private_key=private_key,
@@ -24,7 +40,9 @@ async def process_nautilus_bridge(private_key: str) -> None:
         use_percentage=use_percentage,
         bridge_percentage=bridge_percentage,
         token=token,
-        from_chain=from_chain
+        from_chain=from_chain,
+        to_chain=to_chain,
+        solana_address=solana_address
     )
     logger.debug(nautilus_bridge)
     await nautilus_bridge.bridge()
